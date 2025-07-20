@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Moon+Dance&family=Fira+Code:wght@400;500&display=swap');
+@import '../../styles/variables.css';
+
+* {
+     list-style-type: none;
+     text-decoration: none;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+body {
+     font-family: var(--font-primary);
+     transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+a {
+     color: inherit;
+}
+
+/* Navbar styling */
+.navbar {
+     height: 60px;
+     width: 100%;
+     position: fixed;
+     top: 0;
+     left: 0;
+     display: flex;
+     align-items: center;
+     background-color: var(--surface-color);
+     color: var(--text-color);
+     font-size: 1rem;
+     padding: 0 var(--space-lg);
+     box-shadow: var(--shadow-sm);
+     z-index: 100;
+     transition: all var(--transition-normal);
+}
+
+.navbar ul {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     width: 100%;
+}
+
+.navbar ul li {
+     display: flex;
+     align-items: center;
+     gap: var(--space-md);
+}
+
+.logofont {
+     font-family: var(--font-logo);
+     font-weight: 400;
+     font-size: 2.25rem;
+     background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     transition: all var(--transition-normal);
+}
+
+/* Sidebar styling */
+.sidebar {
+     position: fixed;
+     left: 0;
+     top: 60px;
+     width: 240px;
+     height: calc(100vh - 60px);
+     background-color: var(--surface-color);
+     color: var(--text-color);
+     box-shadow: var(--shadow-sm);
+     z-index: 90;
+     transition: all var(--transition-normal);
+     overflow-y: auto;
+}
+
+.sidebar ul {
+     padding: var(--space-md);
+     display: flex;
+     flex-direction: column;
+     gap: var(--space-xs);
+}
+
+.icons {
+     height: 24px;
+     width: 24px;
+     color: var(--primary-color);
+     transition: all var(--transition-fast);
+}
+
+.components {
+     width: 100%;
+     cursor: pointer;
+     display: flex;
+     gap: var(--space-md);
+     padding: var(--space-sm) var(--space-md);
+     border-radius: var(--radius-md);
+     align-items: center;
+     justify-content: start;
+     transition: all var(--transition-fast);
+}
+
+.components:hover {
+     background-color: rgba(59, 130, 246, 0.1);
+}
+
+.components:active {
+     background-color: rgba(59, 130, 246, 0.2);
+}
+
+.sidebar li {
+     text-align: left;
+     flex: 1;
+     font-weight: 500;
+     font-size: 0.95rem;
+}
+
+/* Workspace styling */
+.workspace {
+     height: calc(100vh - 60px);
+     width: calc(100% - 240px);
+     position: fixed;
+     top: 60px;
+     left: 240px;
+     padding: var(--space-md);
+     overflow: hidden;
+     transition: all var(--transition-normal);
+}
+
+.workspace textarea {
+     border: none;
+     height: 100%;
+     width: 100%;
+     box-sizing: border-box;
+     resize: none;
+     padding: var(--space-lg);
+     border-radius: var(--radius-md);
+     background-color: var(--surface-color);
+     color: var(--text-color);
+     box-shadow: var(--shadow-md);
+     transition: all var(--transition-normal);
+     line-height: 1.6;
+}
+
+textarea:focus {
+     outline: none;
+     box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+/* Dropdown styling */
+.dropdown {
+     background-color: var(--surface-color);
+     position: relative;
+     padding: var(--space-md);
+     margin-left: var(--space-md);
+     border-radius: var(--radius-md);
+     box-shadow: var(--shadow-md);
+     z-index: 80;
+     display: none;
+     max-height: 300px;
+     overflow-y: auto;
+}
+
+.dropdown-content {
+     position: absolute;
+     background-color: var(--surface-color);
+     padding: var(--space-md);
+     border-radius: var(--radius-md);
+     box-shadow: var(--shadow-lg);
+     z-index: 101;
+     font-size: 0.9rem;
+     font-weight: 500;
+     cursor: pointer;
+     min-width: 120px;
+}
+
+.dropdown-content:hover {
+     background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Username display */
+.username {
+     font-weight: 500;
+     background-color: rgba(59, 130, 246, 0.1);
+     padding: var(--space-xs) var(--space-md);
+     border-radius: var(--radius-full);
+     font-size: 0.9rem;
+}
+
+.navlinks {
+     display: flex;
+     align-items: center;
+     gap: var(--space-lg);
+}
+
+/* Toast notification styling */
+.toast-notification {
+     position: fixed;
+     bottom: var(--space-lg);
+     right: var(--space-lg);
+     padding: var(--space-sm) var(--space-md);
+     border-radius: var(--radius-md);
+     background-color: var(--surface-color);
+     color: var(--text-color);
+     box-shadow: var(--shadow-lg);
+     z-index: 1000;
+     font-size: 0.9rem;
+     font-weight: 500;
+     display: flex;
+     align-items: center;
+     gap: var(--space-sm);
+     max-width: 300px;
+     animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s;
+}
+
+.toast-notification.success {
+     border-left: 3px solid var(--success-color);
+}
+
+.toast-notification.success::before {
+     content: "✓";
+     color: var(--success-color);
+     font-weight: 700;
+}
+
+.toast-notification.error {
+     border-left: 3px solid var(--error-color);
+}
+
+.toast-notification.error::before {
+     content: "✕";
+     color: var(--error-color);
+     font-weight: 700;
+}
+
+.toast-notification.info {
+     border-left: 3px solid var(--info-color);
+}
+
+.toast-notification.info::before {
+     content: "ℹ";
+     color: var(--info-color);
+     font-weight: 700;
+}
+
+@keyframes slideIn {
+     from {
+          transform: translateX(100%);
+          opacity: 0;
+     }
+
+     to {
+          transform: translateX(0);
+          opacity: 1;
+     }
+}
+
+@keyframes fadeOut {
+     from {
+          opacity: 1;
+     }
+
+     to {
+          opacity: 0;
+     }
+}
+
+/* Dark mode specific styles */
+body.dark .workspace textarea {
+     background-color: var(--dark-surface);
+     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .components:hover {
+     background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark .components:active {
+     background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark .toast-notification {
+     background-color: var(--dark-surface);
+}
+
+body.light .workspace textarea {
+     background-color: var(--light-surface);
+}
+
+body.light .toast-notification {
+     background-color: var(--light-surface);
+}
+
+/* Hide scrollbar but allow scrolling */
+::-webkit-scrollbar {
+     width: 6px;
+     height: 6px;
+}
+
+::-webkit-scrollbar-track {
+     background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+     background-color: rgba(59, 130, 246, 0.3);
+     border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+     background-color: rgba(59, 130, 246, 0.5);
+}

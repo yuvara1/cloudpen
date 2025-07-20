@@ -1,0 +1,179 @@
+@import '../../styles/variables.css';
+
+/* Navbar styling - matched with styleDash.css */
+.navbar {
+     height: 60px;
+     width: 100%;
+     position: fixed;
+     top: 0;
+     left: 0;
+     display: flex;
+     align-items: center;
+     background-color: var(--surface-color);
+     color: var(--text-color);
+     font-size: 1rem;
+     padding: 0 var(--space-lg);
+     box-shadow: var(--shadow-sm);
+     z-index: 100;
+     transition: all var(--transition-normal);
+}
+
+/* Logo styling */
+.navbar h1 {
+     font-family: var(--font-logo);
+     font-weight: 400;
+     font-size: 2.25rem;
+     background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     transition: all var(--transition-normal);
+}
+
+/* Navbar items */
+.navbar-items {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     width: 100%;
+     gap: var(--space-lg);
+}
+
+/* Right side controls */
+.navbar-controls {
+     display: flex;
+     align-items: center;
+     gap: var(--space-md);
+}
+
+/* Language selector */
+.options {
+     min-width: 120px;
+     z-index: 101;
+}
+
+/* Theme icons */
+.theme-icons {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     transition: all var(--transition-fast);
+}
+
+.icon {
+     height: 24px;
+     width: 24px;
+     color: var(--primary-color);
+     transition: all var(--transition-fast);
+     cursor: pointer;
+}
+
+.icon:hover {
+     color: var(--accent-color);
+}
+
+/* Font size control */
+.font-size-control {
+     display: flex;
+     align-items: center;
+     gap: var(--space-xs);
+}
+
+.navbar label {
+     font-size: 0.95rem;
+     font-weight: 500;
+     white-space: nowrap;
+}
+
+.navbar input[type="range"] {
+     width: 80px;
+     cursor: pointer;
+     accent-color: var(--primary-color);
+}
+
+/* Editor switch link */
+.navbar a {
+     display: flex;
+     align-items: center;
+     gap: var(--space-sm);
+     padding: var(--space-xs) var(--space-md);
+     border-radius: var(--radius-md);
+     background-color: rgba(59, 130, 246, 0.1);
+     color: var(--text-color);
+     font-weight: 500;
+     font-size: 0.9rem;
+     text-decoration: none;
+     transition: all var(--transition-fast);
+}
+.navbar-logo{
+     padding:0 1rem !important;
+}
+
+.navbar a:hover {
+     background-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Logout button styling */
+.logout-btn {
+     display: flex;
+     align-items: center;
+     gap: var(--space-sm);
+     padding: var(--space-xs) var(--space-md);
+     border-radius: var(--radius-md);
+     background-color: rgba(239, 68, 68, 0.1);
+     color: var(--text-color);
+     font-weight: 500;
+     font-size: 0.9rem;
+     border: none;
+     font-family: var(--font-primary);
+     cursor: pointer;
+     transition: all var(--transition-fast);
+}
+
+.logout-btn:hover {
+     background-color: rgba(239, 68, 68, 0.2);
+}
+
+.logout-btn .icon {
+     color: var(--error-color);
+}
+
+/* Dark mode styles */
+body.dark .navbar {
+     background-color: var(--dark-surface);
+     color: var(--text-light);
+}
+
+body.light .navbar {
+     background-color: var(--light-surface);
+     color: var(--text-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+     .navbar {
+          padding: 0 var(--space-md);
+     }
+
+     .navbar h1 {
+          font-size: 1.75rem;
+     }
+
+     .navbar a span {
+          display: none;
+     }
+
+     .logout-btn span {
+          display: none;
+     }
+}
+
+@media (max-width: 768px) {
+     .navbar label {
+          display: none;
+     }
+
+     .navbar-controls {
+          gap: var(--space-sm);
+     }
+}

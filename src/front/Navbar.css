@@ -1,0 +1,67 @@
+.navbar {
+     display: flex;
+     align-items: center;
+     padding-left: 20px;
+     height: 50px;
+     text-align: center;
+     color: #ffffff;
+     background-color: #000000;
+     gap: 20px;
+     border-bottom: 1px solid #ffffff;
+}
+
+.navbar h1 {
+     font-family: 'Moon Dance', cursive;
+}
+
+#no {
+     height: 36px;
+     width: 80px;
+     font-size: 16px;
+     color: rgb(255, 255, 255);
+     border: 1px solid #afec3f;
+     border-radius: 4px;
+     background-color: #000000;
+}
+
+#no:focus {
+     outline: none;
+}
+
+.css-2b097c-container {
+     width: 120px;
+     color: rgb(0, 0, 0);
+     background-color: #ffffff;
+}
+
+.options {
+     color: rgb(110, 79, 79);
+}
+
+.css-1okebmr-indicatorSeparator {
+     display: none;
+}
+
+.css-1pahdxg-control {
+     background-color: #000000 !important;
+     border-color: #ffffff !important;
+}
+
+.css-26l3qy-menu {
+     background-color: gray !important;
+}
+
+.theme-icons {
+     display: flex;
+     gap: 10px;
+}
+
+.icon {
+     cursor: pointer;
+     font-size: 24px;
+     color: #ffffff;
+}
+
+.icon.active {
+     color: #ffd700;
+}
